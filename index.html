@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TPR Running Team</title>
+<meta name="description" content="TPR Running Team — união, disciplina e evolução. Inscrições, planos de treino, uniforme e patrocinadores.">
+<style>
+:root{--pink:#ff2fa8;--pink2:#ff5fbd;--black:#080808;--card:#131313;--line:#292929;--text:#f5f5f5;--muted:#aaa}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text)}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px}.logo-mini{width:42px;height:42px;border:2px dashed var(--pink);border-radius:50%;display:grid;place-items:center;color:var(--pink);font-weight:900}
+nav{display:flex;gap:22px}nav a{color:#ddd;font-size:14px}nav a:hover{color:var(--pink)}.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:80px 0;background:radial-gradient(circle at 50% 25%,rgba(255,47,168,.20),transparent 38%)}
+.hero-logo{width:170px;height:170px;object-fit:contain;border:1px dashed #555;border-radius:24px;padding:12px;margin-bottom:22px;background:#0d0d0d}
+.kicker{color:var(--pink);font-weight:800;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(44px,8vw,82px);margin:10px 0;line-height:.95}.hero h1 span{color:var(--pink)}.hero p{max-width:650px;margin:22px auto;color:#bbb;font-size:18px;line-height:1.6}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;background:var(--pink);color:#050505;font-weight:900;border:0;cursor:pointer}.btn.outline{background:transparent;color:white;border:1px solid #444;margin-left:8px}.btn:hover{filter:brightness(1.1)}
+section{padding:90px 0}.section-title{text-align:center;margin-bottom:45px}.section-title small{color:var(--pink);font-weight:800;letter-spacing:2px}.section-title h2{font-size:38px;margin:8px 0}.section-title p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}.card h3{margin-top:0}.card p,.card li{color:#bbb;line-height:1.6}.icon{font-size:30px;margin-bottom:10px}
+.plans .card{position:relative}.plans .featured{border:2px solid var(--pink);transform:translateY(-8px)}.tag{position:absolute;top:-13px;right:18px;background:var(--pink);color:#000;font-weight:900;padding:6px 10px;border-radius:20px;font-size:12px}.price{font-size:36px;font-weight:900;margin:15px 0;color:white}.price span{font-size:14px;color:#999;font-weight:400}.card ul{padding-left:20px}.card li{margin:8px 0}
+.requirements{display:grid;grid-template-columns:1fr 1fr;gap:25px}.req{display:flex;gap:15px;align-items:flex-start}.check{width:30px;height:30px;flex:none;border-radius:50%;background:rgba(255,47,168,.15);color:var(--pink);display:grid;place-items:center;font-weight:900}
+.shop{grid-template-columns:repeat(3,1fr)}.product img{width:100%;height:220px;object-fit:cover;border-radius:12px;background:#1a1a1a}.product .placeholder{height:220px;border:1px dashed #555;border-radius:12px;display:grid;place-items:center;color:#777}.product small{color:#999}.product h3{margin-bottom:5px}
+.sponsors{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}.sponsor{width:190px;height:110px;border:1px dashed #555;border-radius:14px;display:grid;place-items:center;color:#aaa;text-align:center;padding:10px}
+form{max-width:760px;margin:auto;background:var(--card);padding:30px;border-radius:20px;border:1px solid var(--line);display:grid;gap:15px}.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{font-size:13px;color:#ccc}input,select,textarea{width:100%;margin-top:7px;padding:13px;background:#0c0c0c;border:1px solid #333;color:white;border-radius:9px}textarea{min-height:100px;resize:vertical}
+.notice{font-size:12px;color:#888;line-height:1.5}.success{display:none;background:#102b1b;border:1px solid #1d8d4c;color:#9df0bd;padding:14px;border-radius:10px}
+.admin{background:#0e0e0e;border-top:1px solid var(--line)}.admin details{max-width:900px;margin:auto}.admin summary{cursor:pointer;color:var(--pink);font-weight:800}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.admin textarea{min-height:160px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#888;text-align:center}.pink{color:var(--pink)}
+@media(max-width:800px){nav{display:none}.menu{display:block}.grid,.shop,.requirements{grid-template-columns:1fr}.plans .featured{transform:none}.row,.admin-grid{grid-template-columns:1fr}.hero{min-height:590px}.btn.outline{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#inicio"><div class="logo-mini">TPR</div><span>TPR RUNNING TEAM</span></a>
+<button class="menu" onclick="toggleMenu()">☰</button>
+<nav id="nav"><a href="#sobre">Sobre</a><a href="#planos">Planos</a><a href="#equipe">Requisitos</a><a href="#uniforme">Uniforme</a><a href="#patrocinadores">Patrocinadores</a><a href="#inscricao">Inscrição</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="container">
+<img id="heroLogo" class="hero-logo" src="" alt="Logo TPR" onerror="this.style.display='none'">
+<div class="kicker">Corrida • União • Evolução</div>
+<h1>SEJA PARTE DA <span>TPR</span></h1>
+<p>Uma equipe criada por amigos para transformar disciplina, amizade e dedicação em evolução dentro e fora das pistas.</p>
+<a class="btn" href="#inscricao">QUERO ENTRAR NA TPR</a><a class="btn outline" href="#planos">VER PLANOS</a>
+</div></section>
+
+<section id="sobre"><div class="container"><div class="section-title"><small>QUEM SOMOS</small><h2>Mais que uma equipe</h2><p>TPR nasceu da união de Taylon, Pietro e Rafael. Agora queremos levar essa união para cada novo atleta.</p></div>
+<div class="grid"><div class="card"><div class="icon">🏃</div><h3>Treino</h3><p>Rotina organizada para desenvolver corrida com constância e respeito ao nível de cada atleta.</p></div>
+<div class="card"><div class="icon">🤝</div><h3>Equipe</h3><p>Treinos em grupo, incentivo e espírito de equipe para ninguém correr sozinho.</p></div>
+<div class="card"><div class="icon">🎯</div><h3>Evolução</h3><p>Metas, acompanhamento e ajustes para buscar evolução de forma responsável.</p></div></div></div></section>
+
+<section id="equipe"><div class="container"><div class="section-title"><small>ENTRADA NA EQUIPE</small><h2>O que esperamos de você?</h2><p>Não procuramos atletas perfeitos. Procuramos pessoas comprometidas.</p></div>
+<div class="requirements">
+<div class="card req"><div class="check">✓</div><div><h3>Foco</h3><p>Ter vontade de aprender, treinar e melhorar.</p></div></div>
+<div class="card req"><div class="check">✓</div><div><h3>Disciplina</h3><p>Respeitar horários, treinos e compromissos assumidos.</p></div></div>
+<div class="card req"><div class="check">✓</div><div><h3>Respeito</h3><p>Tratar atletas, treinadores, organizadores e adversários com respeito.</p></div></div>
+<div class="card req"><div class="check">✓</div><div><h3>Constância</h3><p>Entender que evolução acontece com regularidade, não de um dia para o outro.</p></div></div>
+<div class="card req"><div class="check">✓</div><div><h3>Espírito de equipe</h3><p>Ajudar e incentivar os outros integrantes.</p></div></div>
+<div class="card req"><div class="check">✓</div><div><h3>Responsabilidade</h3><p>Comunicar faltas, respeitar limites e seguir orientações de segurança.</p></div></div>
+</div></div></section>
+
+<section id="planos"><div class="container"><div class="section-title"><small>ESCOLHA SEU PLANO</small><h2>Faça parte da TPR</h2><p>Valores abaixo são exemplos e podem ser alterados no painel de edição.</p></div>
+<div class="grid plans">
+<div class="card"><h3>TPR Equipe</h3><p>Para quem quer fazer parte da equipe e participar dos treinos coletivos.</p><div class="price">R$ 39,90 <span>/ mês</span></div><ul><li>Entrada na equipe</li><li>Treinos coletivos</li><li>Grupo da equipe</li><li>Acompanhamento geral</li></ul><button class="btn" onclick="choosePlan('TPR Equipe')">Quero este</button></div>
+<div class="card featured"><div class="tag">MAIS COMPLETO</div><h3>TPR Performance</h3><p>Corrida + musculação, com planilhas para organizar a rotina.</p><div class="price">R$ 79,90 <span>/ mês</span></div><ul><li>Plano de corrida</li><li>Planilha de musculação</li><li>Treinos com a equipe quando disponíveis</li><li>Revisão periódica</li></ul><button class="btn" onclick="choosePlan('TPR Performance')">Quero este</button></div>
+<div class="card"><h3>TPR Completo</h3><p>Para quem quer corrida, musculação e orientação de rotina alimentar.</p><div class="price">R$ 119,90 <span>/ mês</span></div><ul><li>Plano de corrida</li><li>Planilha de musculação</li><li>Orientação alimentar geral</li><li>Acompanhamento e ajustes</li></ul><button class="btn" onclick="choosePlan('TPR Completo')">Quero este</button></div>
+</div><p class="notice" style="text-align:center;margin-top:22px">* A orientação alimentar deve ser adaptada às necessidades individuais por profissional habilitado quando houver necessidade. Os planos de treino também devem respeitar idade, experiência e limites do atleta.</p>
+</div></section>
+
+<section id="uniforme"><div class="container"><div class="section-title"><small>TPR STORE</small><h2>Uniformes e acessórios</h2><p>Coloque aqui as fotos, tamanhos, preços e links de compra.</p></div>
+<div class="grid shop" id="products"></div></div></section>
+
+<section id="patrocinadores"><div class="container"><div class="section-title"><small>QUEM ACREDITA NA TPR</small><h2>Nossos patrocinadores</h2><p>Empresas que caminham com a equipe.</p></div><div class="sponsors" id="sponsors"></div></div></section>
+
+<section id="inscricao"><div class="container"><div class="section-title"><small>FAÇA SUA INSCRIÇÃO</small><h2>Quero entrar na TPR</h2><p>Preencha o formulário. Depois vocês podem entrar em contato para confirmar a inscrição e orientar os próximos passos.</p></div>
+<form id="signup">
+<div class="row"><label>Nome completo<input name="nome" required></label><label>Idade<input name="idade" type="number" min="1" required></label></div>
+<div class="row"><label>WhatsApp<input name="whatsapp" required></label><label>Cidade/UF<input name="cidade" required></label></div>
+<div class="row"><label>Nível atual<select name="nivel"><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></label><label>Plano<select id="planSelect" name="plano"><option>TPR Equipe</option><option>TPR Performance</option><option>TPR Completo</option></select></label></div>
+<label>Por que você quer entrar na TPR?<textarea name="motivo" required></textarea></label>
+<label><input type="checkbox" required style="width:auto"> Declaro que as informações são verdadeiras e que vou respeitar as regras da equipe.</label>
+<button class="btn" type="submit">ENVIAR INSCRIÇÃO</button>
+<div class="success" id="success">Inscrição registrada neste dispositivo! Para receber inscrições de verdade, conecte este formulário a um serviço de formulário ou a um backend.</div>
+</form></div></section>
+
+<section class="admin"><div class="container"><details><summary>⚙️ PAINEL DE EDIÇÃO — dono da TPR</summary>
+<p class="notice">Este painel é uma edição simples no próprio navegador. Para publicar alterações para todo mundo, altere o arquivo <b>index.html</b> e publique novamente. Você pode trocar logo, patrocinadores e produtos no código da página. Os campos abaixo também salvam no navegador.</p>
+<div class="admin-grid">
+<label>URL da logo da TPR<input id="editLogo" placeholder="ex.: imagens/logo.png"></label>
+<label>Instagram<input id="editInstagram" placeholder="@equipe_tpr"></label>
+<label>Patrocinadores (um por linha)<textarea id="editSponsors" placeholder="Empresa 1&#10;Empresa 2"></textarea></label>
+<label>Produtos (formato: Nome | Preço | URL da foto)<textarea id="editProducts" placeholder="Camiseta TPR | R$ 89,90 | imagens/camiseta.jpg&#10;Short TPR | R$ 69,90 | imagens/short.jpg"></textarea></label>
+</div><br><button class="btn" onclick="saveEdits()">SALVAR NO NAVEGADOR</button></details></div></section>
+</main>
+<footer><div class="container">© <span id="year"></span> TPR Running Team • <span class="pink">@equipe_tpr</span></div></footer>
+
+<script>
+const defaults={logo:"",instagram:"@equipe_tpr",sponsors:["Casa do Açaí Vitale","Patrocinador TPR","Sua empresa aqui"],products:[
+["Camiseta TPR","R$ 89,90",""],["Short TPR","R$ 69,90",""],["Kit TPR","R$ 149,90",""]
+]};
+function data(){try{return {...defaults,...JSON.parse(localStorage.tprData||"{}")}}catch(e){return defaults}}
+function render(){let d=data();document.getElementById('heroLogo').src=d.logo||'';document.getElementById('editLogo').value=d.logo;document.getElementById('editInstagram').value=d.instagram;
+document.getElementById('editSponsors').value=d.sponsors.join("\n");document.getElementById('editProducts').value=d.products.map(x=>x.join(" | ")).join("\n");
+document.getElementById('sponsors').innerHTML=d.sponsors.map(x=>`<div class="sponsor">${escapeHtml(x)}</div>`).join("");
+document.getElementById('products').innerHTML=d.products.map(x=>`<div class="card product">${x[2]?`<img src="${escapeAttr(x[2])}" alt="${escapeAttr(x[0])}">`:`<div class="placeholder">ADICIONE A FOTO</div>`}<small>TPR STORE</small><h3>${escapeHtml(x[0])}</h3><p class="pink">${escapeHtml(x[1])}</p><button class="btn" onclick="alert('Configure aqui o seu link de compra para este produto.')">Comprar</button></div>`).join("")}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function escapeAttr(s){return escapeHtml(s)}
+function saveEdits(){let products=document.getElementById('editProducts').value.split("\n").filter(Boolean).map(x=>{let p=x.split("|").map(y=>y.trim());return [p[0]||"Produto",p[1]||"Consulte",p[2]||""]});let d={logo:document.getElementById('editLogo').value.trim(),instagram:document.getElementById('editInstagram').value.trim(),sponsors:document.getElementById('editSponsors').value.split("\n").map(x=>x.trim()).filter(Boolean),products};localStorage.tprData=JSON.stringify(d);render();alert("Alterações salvas neste navegador!")}
+function choosePlan(p){document.getElementById('planSelect').value=p;document.getElementById('inscricao').scrollIntoView()}
+function toggleMenu(){let n=document.getElementById('nav');n.style.display=n.style.display==='flex'?'none':'flex';n.style.flexDirection='column';n.style.position='absolute';n.style.top='72px';n.style.right='4%';n.style.background='#111';n.style.padding='18px';n.style.border='1px solid #333';n.style.borderRadius='12px'}
+document.getElementById('signup').addEventListener('submit',e=>{e.preventDefault();document.getElementById('success').style.display='block';e.target.reset()});
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body>
+</html>
